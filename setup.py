@@ -10,18 +10,19 @@ with open("./autodistill_base_model/__init__.py", 'r') as f:
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+with open("requirements.txt") as fh:
+    install_requires = fh.read().splitlines('\n')
+
 setuptools.setup(
-    name="autodistill-base-model",
+    name="autodistill_yolov6",
     version=version,
-    author="",
-    author_email="",
-    description="Model for use with Autodistill",
+    author="Bazyl Horsey",
+    author_email="bhorsey16@gmail.com",
+    description="Yolov6 for use with Autodistill",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
-    install_requires=[
-        # list your requires
-    ],
+    url="https://github.com/ArvistDev/autodistill-yolov6",
+    install_requires=install_requires,
     packages=find_packages(exclude=("tests",)),
     extras_require={
         "dev": ["flake8", "black==22.3.0", "isort", "twine", "pytest", "wheel"],
